@@ -407,7 +407,7 @@ getStat(player, category, event) -> (
         if(event == 'bedrock_removed', return(global_bedrock_removed:(player(player)~'uuid')));
 
         //MADE BY JACK
-        if(event == 'play_time_hours', return(round(statistic(player, 'custom', 'time_played') / 72000)));
+        if(event == 'play_time_hours', return(floor(statistic(player, 'custom', 'time_played') / 72000)));
         //END OF MADE BY JACK
 
         return(player(player)~event);
