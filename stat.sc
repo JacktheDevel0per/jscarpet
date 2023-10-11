@@ -1,5 +1,8 @@
 // Statistic Display by CommandLeo
 
+//Forked by Jack, changed like one thing...
+//Thanks for making something this cool :D
+
 global_total_text = ' §lTotal';
 global_block_list = block_list();
 global_item_list = item_list();
