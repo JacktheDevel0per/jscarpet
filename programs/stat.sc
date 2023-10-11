@@ -362,7 +362,7 @@ _parseCombinedStatFile(name) -> (
 
 _isInvalidEntry(entry) -> (
     if(entry == global_total_text, return(false));
-    if(global_stat:0 == 'digs' && global_server_whitelisted && global_offline_digs, return(!has(system_info('server_whitelist'), str(entry))));
+    if(global_stat:0    == 'digs' && global_server_whitelisted && global_offline_digs, return(!has(system_info('server_whitelist'), str(entry))));
     return(!player(entry) || (!global_bots_included && player(entry)~'player_type' == 'fake'));
 );
 
@@ -407,7 +407,7 @@ getStat(player, category, event) -> (
         if(event == 'bedrock_removed', return(global_bedrock_removed:(player(player)~'uuid')));
 
         //MADE BY JACK
-        if(event == 'play_time_hours', return(floor(statistic(player, 'custom', 'time_played') / 72000)));
+        if(event == 'play_time_hours', return(floor((statistic(player, 'custom', 'play_time') / 72000))));
         //END OF MADE BY JACK
 
         return(player(player)~event);
